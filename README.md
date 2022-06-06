@@ -9,7 +9,7 @@ PonderNet is an architecture that allows an architecture to ponder automatically
 * Download the files from GitHub
 * Run the PonderNet network by calling 
 ```
-python pondernet_test.py --arguments
+python PonderNet.py --arguments
 
 --dataset: str, select dataset. default is MNIST, select from "MNIST", "FMNIST" and "USPS"
 --rotation: bool flag, use rotations. Default is true.
