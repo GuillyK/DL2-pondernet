@@ -1,4 +1,4 @@
-# PonderNet does wonders: Using PonderNet to determine the right amount of computational iterations
+# PonderNet does wonders: Using PonderNet to determine the optimal amount of computational iterations
 PonderNet is an architecture that attempts to optimize computational efficiency and accuracy. It does this by altering the loss function of any supervised architecture.
 
 ## Description
