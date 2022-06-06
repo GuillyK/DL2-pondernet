@@ -1,6 +1,6 @@
 from tkinter.filedialog import test
 from torch.utils.data import DataLoader, random_split
-from torchvision.datasets import FashionMNIST, MNIST, CIFAR10, USPS
+from torchvision.datasets import FashionMNIST, MNIST, CIFAR10
 from torchvision import transforms
 import torchmetrics
 import torch.nn.functional as F
@@ -36,7 +36,7 @@ Important objects in this file are:
 
 Hyperparameters such as learning rate, epoch count, batch size etc. can be edited above the main loop.
 Dataset parameters can be set using the command line:
---dataset: str, select dataset. default is MNIST, select from "MNIST", "FMNIST" and "USPS"
+--dataset: str, select dataset. default is MNIST, select from "MNIST", "FMNIST", "CIFAR10"
 --rotation: bool flag, use rotations. Default is true.
 --no-rotation: bool flag, don't use rotations. Default is false.
 --ponder: bool flag, use ponderloss. Default is true.
@@ -83,7 +83,7 @@ class PonderDataModule(pl.LightningDataModule):
         ])
 
     def prepare_data(self):
-        """Creates and loads MNIST/FMNIS/USPS/CIFAR10 dataset objects."""
+        """Creates and loads MNIST/FMNIS/CIFAR10 dataset objects."""
         # download data (train/val and test sets)
         if self.dataset_name == "FMNIST":
             FashionMNIST(self.data_dir, train=True, download=True)
@@ -101,11 +101,6 @@ class PonderDataModule(pl.LightningDataModule):
             self.dataset['dataset']  = CIFAR10
             self.num_channels = 3
             print("set channels to ", self.num_channels)
-        elif self.dataset_name == "USPS":
-            USPS(self.data_dir, train=True, download=True)
-            USPS(self.data_dir, train=False, download=True)
-            self.dataset['dataset']  = USPS
-            self.num_channels = 1
 
     def setup(self, stage=None, split_ratio=0.083):
         """
@@ -692,7 +687,7 @@ if __name__ == "__main__":
     pl.seed_everything(1234)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", type=str, help="Choose from MNIST, FMNIST, USPS, (CIFAR10)")
+    parser.add_argument("--dataset", type=str, help="Choose from MNIST, FMNIST, CIFAR10")
     parser.set_defaults(dataset="MNIST")
     parser.add_argument("--rotation", action='store_true', help="Train with rotations or not; boolean")
     parser.add_argument("--no-rotation", dest="rotation", action="store_false", help="Train with rotations or not; boolean")

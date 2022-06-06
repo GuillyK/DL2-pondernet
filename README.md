@@ -11,7 +11,7 @@ PonderNet is an architecture that allows an architecture to ponder automatically
 ```
 python PonderNet.py --arguments
 
---dataset: str, select dataset. default is MNIST, select from "MNIST", "FMNIST" and "USPS"
+--dataset: str, select dataset. default is MNIST, select from "MNIST", "FMNIST" or "CIFAR10"
 --rotation: bool flag, use rotations. Default is true.
 --no-rotation: bool flag, don't use rotations. Default is false.
 --ponder: bool flag, use ponderloss. Default is true.
@@ -21,15 +21,14 @@ python PonderNet.py --arguments
 
 ## Authors
 
-Alex Labro
-11872470
+Alex Labro\
+11872470\
 alex.labro@student.uva.nl
 
-Guilly Kolkman
-11822465
+Guilly Kolkman\
+11822465\
 guilly.kolkman@student.uva.nl
 
-
-Joris Hijstek
-11876980
+Joris Hijstek\
+11876980\
 joris.hijstek@student.uva.nl
