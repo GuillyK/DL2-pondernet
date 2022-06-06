@@ -12,10 +12,10 @@ PonderNet is an architecture that allows an architecture to ponder automatically
 python PonderNet.py --arguments
 
 --dataset: str, select dataset. default is MNIST, select from "MNIST", "FMNIST" or "CIFAR10"
---rotation: bool flag, use rotations. Default is true.
---no-rotation: bool flag, don't use rotations. Default is false.
---ponder: bool flag, use ponderloss. Default is true.
---no-ponder: bool flag, don't use ponderloss. Default is false.
+--rotation: bool flag, use rotations.
+--no-rotation: bool flag, don't use rotations.
+--ponder: bool flag, use ponderloss.
+--no-ponder: bool flag, don't use ponderloss.
 ```
 
 
